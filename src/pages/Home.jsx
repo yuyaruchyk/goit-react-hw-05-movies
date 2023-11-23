@@ -1,6 +1,7 @@
 import { getTrending } from 'components/Api';
 import { useEffect, useState } from 'react';
-import MovieItem from '../components/MovieItem/MovieItem';
+
+import MovieItem from 'components/MovieItem/MovieItem';
 
 const Home = () => {
   const [moviesList, setMovieList] = useState([]);
@@ -29,5 +30,6 @@ const Home = () => {
     </div>
   );
 };
+
 
 export default Home;
