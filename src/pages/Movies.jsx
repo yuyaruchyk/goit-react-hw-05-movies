@@ -15,8 +15,8 @@ const Movies = () => {
     async function getSearchedMovies() {
       try {
         const newQuery = searchText.split('/').pop();
-          const response = await getSearch(newQuery);
-          const foundMovies = response.results;
+        const response = await getSearch(newQuery);
+        const foundMovies = response.results;
         setSearchedMoviesList(foundMovies);
       } catch (error) {
         console.error('Error fetching searched movies:', error);
@@ -26,7 +26,7 @@ const Movies = () => {
     getSearchedMovies();
   }, [searchText]);
 
-  const handleSubmit = (value) => {
+  const handleSubmit = value => {
     setSearchText(`${Date.now()}/${value}`);
   };
 
@@ -34,7 +34,7 @@ const Movies = () => {
     <div>
       <Searchbar onSubmit={handleSubmit} />
       <ul>
-        {searchedMoviesList.map((movie) => (
+        {searchedMoviesList.map(movie => (
           <MovieItem key={movie.id} id={movie.id} title={movie.title} />
         ))}
       </ul>
