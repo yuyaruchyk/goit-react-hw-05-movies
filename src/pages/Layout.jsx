@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
-import Header from "./Header/Header";
+import Header from "../components/Header/Header";
+
 
 const Layout = () => {
     return (
@@ -7,7 +8,7 @@ const Layout = () => {
             <nav>
                 <Header />
                
-                <Outlet />
+                
             </nav>
             <main>
                 <Outlet />

@@ -2,12 +2,12 @@ import { GlobalStyle } from 'GlobalStyle';
 import { Route, Routes, Navigate } from "react-router-dom";
 
 
-import Layout from './Layout';
+import Layout from '../pages/Layout';
 import Home from 'pages/Home';
 import NotFoundPage from 'pages/NotFoundPage';
 import Movies from 'pages/Movies';
-import Cast from 'pages/Cast';
-import Reviews from 'pages/Reviews';
+import Cast from 'components/Cast';
+import Reviews from 'components/Reviews';
 import MovieDetails from 'pages/MovieDetails';
 
 
@@ -15,6 +15,7 @@ import MovieDetails from 'pages/MovieDetails';
 export const App = () => {
   return (
     <main>
+      
       
         <Routes>
           <Route path="/" element={<Layout />}>
