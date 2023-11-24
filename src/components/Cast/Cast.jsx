@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieCredits } from 'components/Api';
+import { StyledImg, StyledCast, StyledP } from './Cast.styled';
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -33,17 +34,18 @@ const Cast = () => {
 
   return (
     <div>
-      <h2>Cast</h2>
+     
       {castInfo && castInfo.length > 0 ? (
-        <ul>
+        <StyledCast>
           {castInfo.map(item => (
             <div key={item.id}>
-              <img src={item.img} alt={item.name} />
-              <p>Name: {item.name}</p>
-              <p>Character: {item.char}</p>
+              <StyledImg src={item.img} alt={item.name}
+              />
+              <StyledP>Name: {item.name}</StyledP>
+              <StyledP>Character: {item.char}</StyledP>
             </div>
           ))}
-        </ul>
+        </StyledCast>
       ) : (
         <p>No cast information available</p>
       )}
