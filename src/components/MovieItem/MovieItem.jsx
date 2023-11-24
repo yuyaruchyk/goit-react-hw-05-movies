@@ -1,12 +1,14 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { StyledLink } from './MovieItem.styled'; 
 
 const MovieItem = ({ id, title }) => {
     return (
         <li>
-            <Link id={id} to={`/movies/${id}`}>
+            <StyledLink id={id} to={`/movies/${id}`}>
                 {title}
-            </Link>
+            </StyledLink>
         </li>
-    )
-}
+    );
+};
+
 export default MovieItem;
