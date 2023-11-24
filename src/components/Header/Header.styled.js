@@ -3,7 +3,9 @@ import { NavLink } from 'react-router-dom';
 
 export const StyledHeader = styled.header`
 width: 100%;
-padding: 50 px;
+padding: 50 px;  
+margin-bottom: 20px;
+border-bottom: 2px solid #000;
 
 
 `
@@ -24,6 +26,7 @@ export const StyledNavLink = styled(NavLink)`
     font-size: 40px;
   padding: 10px;
   color: black;
+
   
  
 

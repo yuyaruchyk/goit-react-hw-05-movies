@@ -2,13 +2,13 @@ import { GlobalStyle } from 'GlobalStyle';
 import { Route, Routes, Navigate } from "react-router-dom";
 
 
-import Layout from '../pages/Layout';
-import Home from 'pages/Home';
+import Layout from '../pages/Layout/Layout';
+import Home from 'pages/Home/Home';
 import NotFoundPage from 'pages/NotFoundPage';
 import Movies from 'pages/Movies';
 import Cast from 'components/Cast/Cast';
 import Reviews from 'components/Reviews/Reviews';
-import MovieDetails from 'pages/MovieDetails';
+import MovieDetails from 'pages/MovieDetails/MovieDetails';
 
 
 

@@ -4,6 +4,8 @@ import { NavLink, Outlet, useParams } from 'react-router-dom';
 import { getMovie } from 'components/Api';
 import MovieInfo from 'components/MovieDetails/MovieDetails';
 
+import { StyledNavPages, StyledNavLink } from './MovieDetails.styled';
+
 const MovieDetails = () => {
   const { movieId } = useParams();
 
@@ -43,11 +45,11 @@ const MovieDetails = () => {
      
       {details && <MovieInfo data={details} />}
       <hr />
-      <div>
-      <NavLink to={`cast`}>Cast</NavLink>
+      <StyledNavPages>
+      <StyledNavLink to={`cast`}>Cast</StyledNavLink>
               
-        <NavLink to={`reviews`}>Reviews</NavLink>
-      </div>
+      <StyledNavLink to={`reviews`}>Reviews</StyledNavLink>
+      </StyledNavPages>
       <Outlet />
     </div>
   );
