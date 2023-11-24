@@ -6,8 +6,8 @@ import Layout from '../pages/Layout';
 import Home from 'pages/Home';
 import NotFoundPage from 'pages/NotFoundPage';
 import Movies from 'pages/Movies';
-import Cast from 'components/Cast';
-import Reviews from 'components/Reviews';
+import Cast from 'components/Cast/Cast';
+import Reviews from 'components/Reviews/Reviews';
 import MovieDetails from 'pages/MovieDetails';
 
 
