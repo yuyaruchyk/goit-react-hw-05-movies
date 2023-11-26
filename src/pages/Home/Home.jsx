@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getTrending } from 'components/Api';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { StyledLink } from 'components/FoundFilms/FoundFilms.styled';
 
 const Home = () => {
   const [moviesList, setMovieList] = useState([]);
@@ -23,9 +24,9 @@ const Home = () => {
     <ul>
       {moviesList.map(movie => (
         <li key={movie.id}>
-          <Link to={`/movies/${movie.id}`} state={{ from: location }}>
+          <StyledLink to={`/movies/${movie.id}`} state={{ from: location }}>
             {movie.title}
-          </Link>
+          </StyledLink>
         </li>
       ))}
     </ul>
