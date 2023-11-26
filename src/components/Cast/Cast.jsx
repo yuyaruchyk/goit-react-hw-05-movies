@@ -6,6 +6,7 @@ import { StyledImg, StyledCast, StyledP } from './Cast.styled';
 const Cast = () => {
   const { movieId } = useParams();
   const [castInfo, setCastInfo] = useState(null);
+  const defaultImg = 'https://www.pacificfoodmachinery.com.au/media/catalog/product/placeholder/default/no-product-image-400x400_8.png'
 
   useEffect(() => {
     const getCast = async id => {
@@ -16,7 +17,7 @@ const Cast = () => {
           id: item.id,
           img: item.profile_path
             ? `https://image.tmdb.org/t/p/w500${item.profile_path}`
-            : 'Unknown',
+            : defaultImg,
           name: item.name || 'Unknown',
           char: item.character || 'Unknown',
         }));

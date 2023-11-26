@@ -10,7 +10,7 @@ const MovieDetails = () => {
   const { movieId } = useParams();
   const [details, setDetails] = useState(null);
 
-   const location = useLocation();
+  const location = useLocation();
   const backLinkHref = location.state?.from ?? "/";
 
   useEffect(() => {
@@ -18,9 +18,7 @@ const MovieDetails = () => {
       try {
         const response = await getMovie(movieId);
         const info = {
-          img: response.poster_path
-            ? `https://image.tmdb.org/t/p/w500${response.poster_path}`
-            : 'No poster',
+         img: response.poster_path ? `https://image.tmdb.org/t/p/w500${response.poster_path}` : 'No image',
           title: response.title,
           year: response.release_date.slice(0, 4),
           overview:
@@ -51,7 +49,8 @@ const MovieDetails = () => {
       <StyledNavPages>
       <StyledNavLink to={backLinkHref}>Back to all films</StyledNavLink>
       <StyledNavLink to={`cast`}>Cast</StyledNavLink>         
-      <StyledNavLink to={`reviews`}>Reviews</StyledNavLink>
+        <StyledNavLink to={`reviews`}>Reviews</StyledNavLink>
+       
       </StyledNavPages>
       <Outlet />
     </div>
