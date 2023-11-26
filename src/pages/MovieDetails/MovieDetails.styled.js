@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const StyledNavPages = styled.div`
- text-decoration: none;
+  text-decoration: none;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   gap: 10px;
   font-weight: 500;
   font-size: 15px;

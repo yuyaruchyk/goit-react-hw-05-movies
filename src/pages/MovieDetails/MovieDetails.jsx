@@ -8,10 +8,11 @@ import { StyledNavPages, StyledNavLink } from './MovieDetails.styled';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
-
   const [details, setDetails] = useState(null);
+
    const location = useLocation();
   const backLinkHref = location.state?.from ?? "/movies";
+  
   useEffect(() => {
     async function getMovieDetails() {
       try {
@@ -49,8 +50,7 @@ const MovieDetails = () => {
       <hr />
       <StyledNavPages>
       <StyledNavLink to={backLinkHref}>Back to all films</StyledNavLink>
-      <StyledNavLink to={`cast`}>Cast</StyledNavLink>
-              
+      <StyledNavLink to={`cast`}>Cast</StyledNavLink>         
       <StyledNavLink to={`reviews`}>Reviews</StyledNavLink>
       </StyledNavPages>
       <Outlet />
