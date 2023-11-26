@@ -1,10 +1,10 @@
+import React, { useEffect, useState } from 'react';
 import { getTrending } from 'components/Api';
-import { useEffect, useState } from 'react';
-
-import MovieItem from 'components/MovieItem/MovieItem';
+import { Link, useLocation } from 'react-router-dom';
 
 const Home = () => {
   const [moviesList, setMovieList] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
     async function getPopularFilms() {
@@ -20,16 +20,16 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-     
-      <ul>
-        {moviesList.map(item => (
-          <MovieItem key={item.id} id={item.id} title={item.title} />
-        ))}
-      </ul>
-    </div>
+    <ul>
+      {moviesList.map(movie => (
+        <li key={movie.id}>
+          <Link to={`/movies/${movie.id}`} state={{ from: location }}>
+            {movie.title}
+          </Link>
+        </li>
+      ))}
+    </ul>
   );
 };
-
 
 export default Home;

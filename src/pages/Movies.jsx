@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Searchbar } from 'components/SearchForm/SearchForm';
-import MovieItem from 'components/MovieItem/MovieItem';
 import { getSearch } from 'components/Api';
-import { useLocation, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
+import FoundFilms from 'components/FoundFilms/FoundFilms'; 
 
 const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -26,7 +26,7 @@ const Movies = () => {
     }
 
     getSearchedMovies();
-  }, [queryNew]); 
+  }, [queryNew]);
 
   const handleSubmit = (value) => {
     setSearchParams({ query: value });
@@ -35,11 +35,7 @@ const Movies = () => {
   return (
     <div>
       <Searchbar onSubmit={handleSubmit} />
-      <ul>
-        {searchedMoviesList.map((movie) => (
-          <MovieItem key={movie.id} id={movie.id} title={movie.title} />
-        ))}
-      </ul>
+      <FoundFilms movies={searchedMoviesList} />
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { NavLink, Outlet, useParams } from 'react-router-dom';
+import { NavLink, Outlet, useParams, useLocation } from 'react-router-dom';
 
 import { getMovie } from 'components/Api';
 import MovieInfo from 'components/MovieDetails/MovieDetails';
@@ -10,7 +10,8 @@ const MovieDetails = () => {
   const { movieId } = useParams();
 
   const [details, setDetails] = useState(null);
-
+   const location = useLocation();
+  const backLinkHref = location.state?.from ?? "/movies";
   useEffect(() => {
     async function getMovieDetails() {
       try {
@@ -40,12 +41,15 @@ const MovieDetails = () => {
     }
     getMovieDetails(movieId);
   }, [movieId]);
+
+  const query = new URLSearchParams(location.search).get('query');
   return (
     <div>
      
       {details && <MovieInfo data={details} />}
       <hr />
       <StyledNavPages>
+      <StyledNavLink to={backLinkHref}>Back to all films</StyledNavLink>
       <StyledNavLink to={`cast`}>Cast</StyledNavLink>
               
       <StyledNavLink to={`reviews`}>Reviews</StyledNavLink>
