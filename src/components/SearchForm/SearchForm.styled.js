@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const SearchBar = styled.header`
- top: 0;
+  top: 0;
   left: 0;
   margin-bottom: 20px;
- 
+
   z-index: 1100;
   display: flex;
   justify-content: center;
@@ -32,7 +32,7 @@ export const SearchForm = styled.form`
 `;
 
 export const SearchFormButton = styled.button`
- display: inline-block;
+  display: inline-block;
   width: 48px;
   height: 48px;
   border: 0;

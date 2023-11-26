@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { NavLink, Outlet, useParams, useLocation } from 'react-router-dom';
+import { Outlet, useParams, useLocation } from 'react-router-dom';
 
 import { getMovie } from 'components/Api';
 import MovieInfo from 'components/MovieDetails/MovieDetails';
@@ -42,7 +42,6 @@ const MovieDetails = () => {
     getMovieDetails(movieId);
   }, [movieId]);
 
-  const query = new URLSearchParams(location.search).get('query');
   return (
     <div>
      

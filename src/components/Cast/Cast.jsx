@@ -8,7 +8,7 @@ const Cast = () => {
   const [castInfo, setCastInfo] = useState(null);
 
   useEffect(() => {
-    const getCast = async (id) => {
+    const getCast = async id => {
       try {
         const res = await getMovieCredits(id);
         const castRes = res.cast;
@@ -29,18 +29,15 @@ const Cast = () => {
     if (movieId) {
       getCast(movieId);
     }
-
   }, [movieId]);
 
   return (
     <div>
-     
       {castInfo && castInfo.length > 0 ? (
         <StyledCast>
           {castInfo.map(item => (
             <div key={item.id}>
-              <StyledImg src={item.img} alt={item.name}
-              />
+              <StyledImg src={item.img} alt={item.name} />
               <StyledP>Name: {item.name}</StyledP>
               <StyledP>Character: {item.char}</StyledP>
             </div>

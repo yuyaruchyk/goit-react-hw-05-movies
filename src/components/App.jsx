@@ -1,6 +1,5 @@
-import { GlobalStyle } from 'GlobalStyle';
-import { Route, Routes, Navigate } from "react-router-dom";
 
+import { Route, Routes, Navigate } from 'react-router-dom';
 
 import Layout from '../pages/Layout/Layout';
 import Home from 'pages/Home/Home';
@@ -10,25 +9,20 @@ import Cast from 'components/Cast/Cast';
 import Reviews from 'components/Reviews/Reviews';
 import MovieDetails from 'pages/MovieDetails/MovieDetails';
 
-
-
 export const App = () => {
   return (
     <main>
-      
-      
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="/movies" element={<Movies />} />
-            <Route path="/movies/:movieId" element={<MovieDetails />}>
-              <Route path="cast" element={<Cast />} />
-              <Route path="reviews" element={<Reviews />} />
-            </Route>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/movies/:movieId" element={<MovieDetails />}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
           </Route>
-           <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      
+        </Route>
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     </main>
   );
 };

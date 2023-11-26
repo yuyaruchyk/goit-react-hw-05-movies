@@ -7,7 +7,7 @@ const Reviews = () => {
   const [reviews, setReviews] = useState(null);
 
   useEffect(() => {
-    const getReviews = async (id) => {
+    const getReviews = async id => {
       try {
         const response = await getMovieReviews(id);
         const reviewResponse = response.cast;
@@ -28,12 +28,10 @@ const Reviews = () => {
     if (movieId) {
       getReviews(movieId);
     }
-
   }, [movieId]);
 
   return (
     <div>
-      
       {reviews && reviews.length > 0 ? (
         <ul>
           {reviews.map(item => (

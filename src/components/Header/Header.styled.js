@@ -1,14 +1,12 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const StyledHeader = styled.header`
-width: 100%;
-padding: 50 px;  
-margin-bottom: 20px;
-border-bottom: 2px solid #000;
-
-
-`
+  width: 100%;
+  padding: 50 px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #000;
+`;
 export const StyledNav = styled.ul`
   display: flex;
   align-items: center;
@@ -17,24 +15,18 @@ export const StyledNav = styled.ul`
   list-style: none;
   flex-direction: row;
   margin: 0;
-`
+`;
 
 export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
-    display: block;
-    font-weight: 700;
-    font-size: 40px;
+  display: block;
+  font-weight: 700;
+  font-size: 40px;
   padding: 10px;
   color: black;
 
-  
- 
-
-    &:hover,
+  &:hover,
   &:focus {
     color: #404bbf;
   }
 `;
-
-
-

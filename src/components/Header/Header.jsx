@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import { StyledNav, StyledHeader, StyledNavLink  } from './Header.styled';
 
 
