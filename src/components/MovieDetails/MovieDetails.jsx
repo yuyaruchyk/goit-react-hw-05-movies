@@ -1,9 +1,11 @@
+import { DetailContainer } from "./MovieDetails.styled";
+
 const MovieInfo = ({ data }) => {
   const { img, title, year, score, overview, genres } = data;
 
   return (
     <div>
-      <div>
+      <DetailContainer>
         <img src={img} alt={title} height="500" />
         <div>
           <h2>
@@ -16,7 +18,7 @@ const MovieInfo = ({ data }) => {
           <h3>Genres</h3>
           <span>{genres}</span>
         </div>
-      </div>
+      </DetailContainer>
     </div>
   );
 };
