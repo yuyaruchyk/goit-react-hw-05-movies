@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useRef } from "react";
 import { Outlet, useParams, useLocation } from 'react-router-dom';
 
 import { getMovie } from 'Appi/Api';
@@ -10,8 +11,8 @@ const MovieDetails = () => {
   const { movieId } = useParams();
   const [details, setDetails] = useState(null);
 
-  const location = useLocation();
-  const backLinkHref = location.state?.from ?? "/";
+   const location = useLocation();
+    const backLink = useRef(location.state?.from ?? "/")
 
   useEffect(() => {
     async function getMovieDetails() {
@@ -47,7 +48,7 @@ const MovieDetails = () => {
       {details && <MovieInfo data={details} />}
       <hr />
       <StyledNavPages>
-      <StyledNavLink to={backLinkHref}>Back to all films</StyledNavLink>
+      <StyledNavLink to={backLink.current}>Back to all films</StyledNavLink>
       <StyledNavLink to={`cast`}>Cast</StyledNavLink>         
         <StyledNavLink to={`reviews`}>Reviews</StyledNavLink>
        
