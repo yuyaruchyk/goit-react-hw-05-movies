@@ -1,8 +1,9 @@
 
 import { Route, Routes } from 'react-router-dom';
 import { lazy } from "react";
+import  Layout  from "./Layout/Layout";
 
-const Layout = lazy(() => import("../pages/Layout/Layout"));
+
 const Home = lazy(() => import("pages/Home/Home"));
 const NotFoundPage = lazy(() => import("pages/NotFoundPage/NotFoundPage"));
 const Movies = lazy(() => import("pages/Movies/Movies"));
@@ -27,3 +28,4 @@ export const App = () => {
     </main>
   );
 };
+export default App;
