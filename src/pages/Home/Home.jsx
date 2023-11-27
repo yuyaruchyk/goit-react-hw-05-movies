@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getTrending } from 'components/Api';
+import { getTrending } from 'Appi/Api';
 import { useLocation } from 'react-router-dom';
 import { StyledLink } from 'components/FoundFilms/FoundFilms.styled';
 

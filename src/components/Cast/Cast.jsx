@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getMovieCredits } from 'components/Api';
+import { getMovieCredits } from 'Appi/Api';
 import { StyledImg, StyledCast, StyledP } from './Cast.styled';
 
 const Cast = () => {

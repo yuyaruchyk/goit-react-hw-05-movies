@@ -1,24 +1,25 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getMovieReviews } from 'components/Api';
+import { getMovieReviews } from 'Appi/Api';
+import { StyledUl, StyledLi, StyledName  } from './Reviews.styled';
 
 const Reviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState(null);
 
   useEffect(() => {
-    const getReviews = async id => {
+    const fetchReviews = async (id) => {
       try {
         const response = await getMovieReviews(id);
-        const reviewResponse = response.cast;
-        const info = reviewResponse.map(item => ({
+
+        const reviewResponse = response.results;
+
+        const info = reviewResponse.map((item) => ({
           id: item.id,
-          img: item.profile_path
-            ? `https://image.tmdb.org/t/p/w500${item.profile_path}`
-            : 'Unknown',
-          name: item.name || 'Unknown',
-          char: item.character || 'Unknown',
+          author: item.author || 'Unknown',
+          review: item.content || 'Unknown',
         }));
+
         setReviews(info);
       } catch (error) {
         console.error(error);
@@ -26,22 +27,21 @@ const Reviews = () => {
     };
 
     if (movieId) {
-      getReviews(movieId);
+      fetchReviews(movieId);
     }
   }, [movieId]);
 
   return (
     <div>
       {reviews && reviews.length > 0 ? (
-        <ul>
-          {reviews.map(item => (
-            <div key={item.id}>
-              <img src={item.img} alt={item.name} />
-              <p>Name: {item.name}</p>
-              <p>Character: {item.char}</p>
-            </div>
+        <StyledUl>
+          {reviews.map((item) => (
+            <StyledLi  key={item.id}>
+              <StyledName>Name: {item.author}</StyledName>
+              <p>Review: {item.review}</p>
+            </StyledLi>
           ))}
-        </ul>
+        </StyledUl>
       ) : (
         <p>No reviews available</p>
       )}

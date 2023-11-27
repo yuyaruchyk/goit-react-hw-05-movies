@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Outlet, useParams, useLocation } from 'react-router-dom';
 
-import { getMovie } from 'components/Api';
+import { getMovie } from 'Appi/Api';
 import MovieInfo from 'components/MovieDetails/MovieDetails';
 
 import { StyledNavPages, StyledNavLink } from './MovieDetails.styled';
